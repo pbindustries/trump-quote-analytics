@@ -1,0 +1,25 @@
+#!/bin/bash
+
+taglist=(
+     'Hillary Clinton'
+     'Ted Cruz'
+     'Jeb Bush'
+     'Marco Rubio'
+     'President Obama'
+     'Hillary Clinton'
+     'Ted Cruz'
+     'Jeb Bush'
+     'Marco Rubio'
+     'President Obama'
+   )
+
+ , Elizabeth Warren, John Kasich, Bernie Sanders, Bill Clinton, Lindsey Graham, Ben Carson, Carly Fiorina, John McCain, Rick Perry, George Pataki, Scott Walker, Tim Kaine, Rand Paul, Donald Trump, George W. Bush, Megyn Kelly, Women, Bobby Jindal, Martin O'Malley, Tom Ridge, Michael Nutter, Barack Obama, Mexico, Immigrants, Cory Booker, Sam Liccardo, Lincoln Chafee, Apologies, Muslims, Bakari Sellers, Illegal Immigrants, Chris Christie, Arianna Huffington, Neil Young, History, Sexual Assults, Military, Marty Walsh, Ben Cardin, Stephanie Rawlings-Blake, Mitt Romney, Ivanka Trump, Ruth Bader Ginsburg, Girlfriends, Joseph R. Biden Jr., Muammar Gaddafi, Bill and Hillary Clinton, Money, Bette Midler
+
+
+
+currentTag=${taglist[index]}
+
+curl --request GET \
+  --url 'https://api.tronalddump.io/search/quote?query=$currentTag' \
+  --header 'accept: application/hal+json' >> ~/pbindustries/public/My-projects/trump-quote-analytics/data/output/output.json
+echo " - $currentTag quotes saved - "
